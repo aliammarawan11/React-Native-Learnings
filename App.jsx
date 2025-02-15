@@ -4,6 +4,7 @@ import {
   Image,
   Pressable,
   SafeAreaView,
+  ScrollView,
   StyleSheet,
   Text,
   TouchableHighlight,
@@ -30,6 +31,8 @@ const App = () => {
     // <View>
     // better to use safeAreaView instead of view
     <SafeAreaView style={[styles.container,{backgroundColor:backgroundColor}]}>
+      <ScrollView contentContainerStyle={{gap:10}} >
+        
       <Text style={[styles.text,{color:textColor}]}>React Native Learnings</Text>
 
       <Image
@@ -72,6 +75,19 @@ const App = () => {
 
 </View>
 
+<View style={{width:"50%",height:200,backgroundColor:"red"}}>
+
+</View>
+<View style={{width:"50%",height:200,backgroundColor:"red"}}>
+
+</View>
+<View style={{width:"50%",height:200,backgroundColor:"red"}}>
+
+</View>
+<View style={{width:"50%",height:200,backgroundColor:"red"}}>
+
+</View>
+</ScrollView>
     </SafeAreaView>
   );
 };
@@ -86,7 +102,7 @@ const styles = StyleSheet.create({
     padding:20,
     gap:10,
     flex:1,
-    flexWrap:"wrap",
+    // flexWrap:"wrap",
     justifyContent:"center",
     alignItems:"center",
     alignContent:"center"  //if using flex wrap then use alignContent instead of align item
