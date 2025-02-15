@@ -8,20 +8,29 @@ import {
   Text,
   TouchableHighlight,
   TouchableOpacity,
+  useColorScheme,
   View,
 } from 'react-native';
 import React from 'react';
 
 const App = () => {
+  const style = {
+    container: {
+      width: '100%',
+      height: '100%',
+      backgroundColor: 'yellow',
+    },
+  };
+
+  const theme = useColorScheme()
+  const isDarkMode = theme === 'dark';
+  const backgroundColor = isDarkMode?"black":"white";
+  const textColor = isDarkMode?"white":"black";
   return (
     // <View>
     // better to use safeAreaView instead of view
-    <SafeAreaView>  
-      <Text>React Native Learning</Text>
-
-
-
-
+    <SafeAreaView style={[styles.container,{backgroundColor:backgroundColor}]}>
+      <Text style={[styles.text,{color:textColor}]}>React Native Learnings</Text>
 
       <Image
         style={{width: 200, height: 300}}
@@ -30,18 +39,8 @@ const App = () => {
         }}
       />
 
-
-
-
-
-
       {/* For the button with already build basic UI  */}
       <Button title="Press Me"></Button>
-
-
-
-
-
 
       {/* For the button */}
       <TouchableOpacity
@@ -50,35 +49,77 @@ const App = () => {
         <Text style={{color: 'white'}}>Button</Text>
       </TouchableOpacity>
 
-
-
-
-
-
       <TouchableHighlight
         style={{padding: 10, backgroundColor: 'red'}}
         onPress={() => Alert.alert('Pressed')}>
         <Text style={{color: 'white'}}>Button</Text>
       </TouchableHighlight>
 
+      {/* Mostly used for buttons */}
 
-
-
-
-{/* Mostly used for buttons */}
-
-      <Pressable  style={{padding: 10, backgroundColor: 'yellow'}}>
-        <Text>Press Me</Text>
+      <Pressable style={styles.button}>
+        <Text style={styles.buttonText}>Press Me</Text>
       </Pressable>
-    {/* // </View> */}
-</SafeAreaView>
+      {/* // </View> */}
 
+      <View style={{width:"50%",height:200,backgroundColor:"red"}}>
 
+      </View>
+      <View style={{width:"50%",height:200,backgroundColor:"red"}}>
 
+</View>
+<View style={{width:"50%",height:200,backgroundColor:"red"}}>
 
+</View>
+
+    </SafeAreaView>
   );
 };
 
 export default App;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    width: '100%',
+    height: '100%',
+    backgroundColor: 'black',
+    padding:20,
+    gap:10,
+    flex:1,
+    flexWrap:"wrap",
+    justifyContent:"center",
+    alignItems:"center",
+    alignContent:"center"  //if using flex wrap then use alignContent instead of align item
+
+  },
+
+  text: {
+    
+
+    color: 'black',
+    fontSize: 20,
+    fontWeight: 'bold',
+  },
+  button: {
+    width: 120,
+    padding: 10,
+    // paddingVertical:7,
+    // paddingHorizontal:10,
+    backgroundColor: '#666',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius:50,
+    marginTop:10,
+    borderWidth:1,
+    borderColor:"red",
+    
+
+  },
+
+  buttonText: {
+    color: 'white',
+    fontWeight: 500,
+    fontSize: 16,
+
+  },
+});
