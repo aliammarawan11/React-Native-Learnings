@@ -3,6 +3,7 @@ import {
   Button,
   Image,
   Pressable,
+  SafeAreaView,
   StyleSheet,
   Text,
   TouchableHighlight,
@@ -13,7 +14,9 @@ import React from 'react';
 
 const App = () => {
   return (
-    <View>
+    // <View>
+    // better to use safeAreaView instead of view
+    <SafeAreaView>  
       <Text>React Native Learning</Text>
 
 
@@ -67,8 +70,8 @@ const App = () => {
       <Pressable  style={{padding: 10, backgroundColor: 'yellow'}}>
         <Text>Press Me</Text>
       </Pressable>
-    </View>
-
+    {/* // </View> */}
+</SafeAreaView>
 
 
 
