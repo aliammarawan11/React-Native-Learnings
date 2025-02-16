@@ -1,10 +1,5 @@
 //_______________________FUNDAMENTAL CONCEPTS_________________________
 
-
-
-
-
-
 // import {
 //   Alert,
 //   Button,
@@ -50,9 +45,6 @@
 
 //           </View>
 //         </View>
-
-
-
 
 //       <ScrollView contentContainerStyle={{gap: 10}}>
 //         <Text style={[styles.text, {color: textColor}]}>
@@ -167,25 +159,7 @@
 //   },
 // });
 
-
-
-
-
-
-
-
-
-
-
 //______________________HANDLING USER INPUT__________________
-
-
-
-
-
-
-
-
 
 // import {Button,StyleSheet, Text, TextInput, View } from 'react-native'
 // import React, { useState } from 'react'
@@ -202,21 +176,19 @@
 //     <View style={styles.container}>
 //       <Text style={styles.title}>Hello! How are you</Text>
 //       <TextInput
-      
+
 //       placeholder='Enter a text here.....'
 //       style={styles.input}
 //       value={text}
 //       onChangeText={(text)=>setText(text)}
 //       multiline
 //       numberOfLines={1}
-      
-      
+
 //       />
 
 //       <Button title='Submit' onPress={handleSubmit}></Button>
 //     {submittedText ?  (<Text>Result : {submittedText}</Text>) :null}
 
-      
 //     </View>
 //   )
 // }
@@ -229,9 +201,8 @@
 //         justifyContent: 'center',
 //         alignItems:"center",
 //         padding:20,
-     
-//     },
 
+//     },
 
 //     title:{
 //         fontSize:20,
@@ -247,22 +218,7 @@
 //     }
 // })
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //__________________________Stack Navigation____________________________
-
 
 // import { StyleSheet, Text, View } from 'react-native'
 // import React from 'react'
@@ -273,22 +229,17 @@
 // import Search from './src/screens/Search';
 // import { NavigationContainer } from '@react-navigation/native';
 
-
-
-
 // const Stack = createNativeStackNavigator();
-
-
 
 // const StackNavigator = () => {
 //     return(
-//         <Stack.Navigator initialRouteName='Home' 
+//         <Stack.Navigator initialRouteName='Home'
 //         screenOptions = {{
 //             headerStyle:{
 //                 backgroudColor:"yellow"
 //             }
 //         }}>
-           
+
 //             <Stack.Screen name="Profile" component={Profile} />
 //             <Stack.Screen name="Home" component={Home} />
 //             <Stack.Screen name="Search" component={Search} />
@@ -307,3 +258,57 @@
 // export default App
 
 // const styles = StyleSheet.create({})
+
+//__________________________Tab Navigation____________________________
+
+// import {StyleSheet, Text, View} from 'react-native';
+// import React from 'react';
+// import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+// import {NavigationContainer} from '@react-navigation/native';
+// import {createNativeStackNavigator} from '@react-navigation/native-stack';
+// import Home from './src/screens/Home';
+// import Profile from './src/screens/Profile';
+// import Search from './src/screens/Search';
+// import Icon from 'react-native-vector-icons/AntDesign';
+
+// const Tab = createBottomTabNavigator();
+
+// const App = () => {
+//   function TabNavigator() {
+//     return (
+//       <Tab.Navigator
+//         initialRouteName="Home"
+//         screenOptions={{
+//           tabBarActiveTintColor: 'red',
+//           tabBarInactiveTintColor: 'black',
+//           tabBarStyle: {
+//             height: 60,
+//           },
+//         }}>
+//         <Tab.Screen
+//           name="Home"
+//           component={Home}
+//           options={{
+//             headerShown: false,
+//             tabBarIcon: ({size,color}) => <Icon name="home" size={30} color={color} />,
+//           }}
+//         />
+//         <Tab.Screen
+//           name="Profile"
+//           component={Profile}
+//           options={{tabBarActiveTintColor: 'red'}}
+//         />
+//         <Tab.Screen name="Search" component={Search} />
+//       </Tab.Navigator>
+//     );
+//   }
+//   return (
+//     <NavigationContainer>
+//       <TabNavigator />
+//     </NavigationContainer>
+//   );
+// };
+
+// export default App;
+
+// const styles = StyleSheet.create({});
